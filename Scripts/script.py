@@ -1,6 +1,9 @@
-from drone import drone
- 
-drone=drone()
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.drone import drone
+
+drone=pluto()
 drone.connect()
 
 #trim(Roll,Pitch,Throttle,Yaw)
