@@ -14,7 +14,7 @@ RepoName/
 ├── Keyboard/
 │   ├── windows/
 │   │   └── keyboard.py
-│   ├── linux, mac/
+│   └── linux, mac/
 │       └── keyboard.py
 │
 ├── Scripts/
