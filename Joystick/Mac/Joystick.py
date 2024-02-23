@@ -1,13 +1,14 @@
 import time
-from Pluto import pluto   # Importing the Pluto module for interfacing with the Pluto drone
-from drone import drone   # Importing the drone module for drone control
 import pygame
 import threading
 
-# Initialize Pluto drone object
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from src.Pluto import pluto
+
 my_pluto = pluto()
-da = drone()
-da.connect()
+
 
 class XboxController(object):
     MAX_TRIG_VAL = 255
