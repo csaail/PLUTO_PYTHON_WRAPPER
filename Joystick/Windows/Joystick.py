@@ -1,5 +1,11 @@
-from Pluto import pluto   # Importing the Pluto module for interfacing with the Pluto drone
 import Joystick_controls  # Importing the Joystick_controls module for Xbox controller input
+
+
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from src.Pluto import pluto   # Importing the Pluto module for interfacing with the Pluto drone
+
 
 # Initialize Xbox controller and Pluto drone objects
 joy = Joystick_controls.XboxController()
