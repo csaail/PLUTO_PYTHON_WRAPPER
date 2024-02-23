@@ -2,8 +2,12 @@ import evdev
 import threading
 import errno
 import time
-from Pluto import pluto
-from plutoMultiwii import *
+
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+
+from src.Pluto import pluto
 
 class XboxController(object):
     MAX_TRIG_VAL = 255
