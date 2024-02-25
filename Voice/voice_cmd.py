@@ -1,84 +1,60 @@
-import os
-import json
-import vosk
+from vosk import Model, KaldiRecognizer
 import pyaudio
-from threading import Thread  # Importing the Thread class for creating threads
-import time
+import json
 
-# Define the path to the Vosk model and the sample rate
-MODEL_PATH = "/vosk-model-small-en-us-0.15"  # Update with actual path
-SAMPLE_RATE = 16000
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+from src.Pluto import pluto
 
-# Initialize the Vosk recognizer with the provided model
-vosk.SetLogLevel(-1)  # Disable log messages (optional)
-model = vosk.Model(MODEL_PATH)
-recognizer = vosk.KaldiRecognizer(model, SAMPLE_RATE)
+# Initialize Vosk model for speech recognition
+model = Model(r"C:/Users/creat/Downloads/py_drona/drone_all-main/drone_all-main/vosk-model-small-en-us-0.15")
+recognizer = KaldiRecognizer(model, 16000)
 
-# Initialize PyAudio for audio input
-audio = pyaudio.PyAudio()
-
-# Find the index of the default PulseAudio microphone
-mic_index = None
-for i in range(audio.get_device_count()):
-    info = audio.get_device_info_by_index(i)
-    if "pulse" in info["name"].lower() and info["maxInputChannels"] > 0:
-        mic_index = i
-        break
-
-if mic_index is None:
-    print("No PulseAudio microphone found. Please ensure one is connected and try again.")
-    exit()
-
-# Open a stream from the microphone
-stream = audio.open(format=pyaudio.paInt16, channels=1, rate=SAMPLE_RATE, input=True,
-                    input_device_index=mic_index, frames_per_buffer=2048)
+# Initialize PyAudio for microphone input
+mic = pyaudio.PyAudio()  # Make sure your microphone is enabled and working
+stream = mic.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)  # Increased buffer size
+stream.start_stream()
 
 # Initialize Pluto object for controlling the drone
 my_pluto = pluto()
 
-# Main loop for speech recognition
+# Continuously listen for speech input and recognize it
 while True:
-    data = stream.read(2048)  # Read audio data from the stream
-    if len(data) == 0:
-        break  # Stop if no data is received
-
-    # Feed the audio data to the recognizer
+    data = stream.read(4096)
+    
+    # Process the received audio data for speech recognition
     if recognizer.AcceptWaveform(data):
-        result = json.loads(recognizer.Result())
-        text = result['text'].lower()  # Convert recognized text to lowercase for case insensitivity
-        print("Recognized:", text)
-
+        text = recognizer.Result()
+        data = json.loads(text)
+        recognized_text = data["text"]
+        print("Recognized:", recognized_text)
+        
         # Execute drone commands based on recognized speech
-        if "start" in text:
+        if "start" in recognized_text:
             my_pluto.arm()
-        elif "stop" in text:
-            my_pluto.disarm()
-        elif "take off" in text:
+        elif "fly" in recognized_text:
             my_pluto.take_off()
-        elif "land" in text:
+        elif "stop" in recognized_text:
+            my_pluto.disarm()
+        elif "land" in recognized_text:
             my_pluto.land()
-        elif "up" in text:
+        elif "up" in recognized_text:
             my_pluto.increase_height()
-        elif "down" in text:
+        elif "down" in recognized_text:
             my_pluto.decrease_height()
-        elif "forward" in text:
+        elif "forward" in recognized_text:
             my_pluto.forward()
-        elif "back" in text:
+        elif "back" in recognized_text:
             my_pluto.backward()
-        elif "left" in text:
-            my_pluto.left()
-        elif "right" in text:
+        elif "left" in recognized_text:
+             my_pluto.left()
+        elif "right" in recognized_text:
             my_pluto.right()
-        elif "yes" in text:
+        elif "yes" in recognized_text:
             my_pluto.left_yaw()
-        elif "no" in text:
+        elif "no" in recognized_text:
             my_pluto.right_yaw()
+        
+        # Add more commands as needed
+        
     else:
-        result = json.loads(recognizer.PartialResult())
-        text = result['partial'].lower()  # Convert partial text to lowercase for case insensitivity
-        print("Partial:", text)
-
-# Close the audio stream and PyAudio
-stream.stop_stream()
-stream.close()
-audio.terminate()
+        print("No speech detected or recognized.")
