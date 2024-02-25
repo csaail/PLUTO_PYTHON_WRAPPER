@@ -7,8 +7,28 @@ Pluto can be operated using Python for various tasks. Python is a versatile prog
 Pitch => Forward/Back.<br/> Roll => Left/right.<br/>  Yaw => Left/right rotation around the centre of the frame.<br/>  Throttle => Changed altitude/speed.
 
 
-
 ## Keyboard Controls:
+
+To set up keyboard controls for your Pluto drone, follow these general steps:
+
+1. Locate Keyboard Control Files:
+   - Navigate to the appropriate directory based on your operating system:
+     - For Windows users: Keyboard/windows
+     - For Linux/Mac users: Keyboard/linux,mac
+
+2. Run Keyboard Control Script:
+   - Locate the keyboard.py file in the respective directory and run it.
+
+### Specific Instructions:
+
+#### For Windows Users:
+- Navigate to the Keyboard/windows directory.
+- Run the ```keyboard.py``` script.
+
+#### For Linux/Mac Users:
+- Navigate to the Keyboard/linux_mac directory.
+- Run the ```keyboard.py``` script.
+
 ![W](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/2ed955e3-dea1-4dfe-adc3-5ba69d3fdc1d)
 
 ## Joystick Controls Setup:
@@ -25,7 +45,7 @@ To set up joystick controls for your Pluto drone, follow these general steps:
      - For macOS users: Joystick/mac
 
 3. Run Joystick Control Script:
-   - Locate the joystick.py file in the respective directory and run it.
+   - Locate the ```joystick.py``` file in the respective directory and run it.
 
 ### Specific Instructions:
 
