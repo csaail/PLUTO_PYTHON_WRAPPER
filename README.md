@@ -83,9 +83,9 @@ We've developed a script that enables you to control your Pluto drone using your
 3. **Run Voice Command Script:**
    - Navigate to the "voice" folder.
    - Run the file:
-     ```
+     `
      voice_cmd.py
-     ```
+     `
 
 Currently, the drone responds to the following voice commands:
 - "hello" to arm the drone.
