@@ -11,10 +11,10 @@ Pitch => Forward/Back.<br/> Roll => Left/right.<br/>  Yaw => Left/right rotation
 ## Keyboard Controls:
 ![W](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/2ed955e3-dea1-4dfe-adc3-5ba69d3fdc1d)
 
-##joystick Controls:
+## Joystick Controls:
 
 If you prefer the tactile feel of a joystick for controlling your Pluto drone, you can easily set it up following these steps:
-<br\>
+<br/>
 For Windows Users:
 <br/>Ensure that you have the necessary libraries installed. Then, navigate to the directory where the joystick control script is located and execute the following command:
 ```python joystick.py ```<br/>
