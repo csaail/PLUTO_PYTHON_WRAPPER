@@ -15,17 +15,17 @@ Pitch => Forward/Back.<br/> Roll => Left/right.<br/>  Yaw => Left/right rotation
 
 If you prefer the tactile feel of a joystick for controlling your Pluto drone, you can easily set it up following these steps:
 <br/>
-For Windows Users:
-<br/>Ensure that you have the necessary libraries installed. Then, navigate to the directory where the joystick control script is located and execute the following command:
-```python joystick.py ```<br/>
+### For Windows Users:
+<br/>Ensure that you have the necessary libraries installed. Then, navigate to the Joystick:windows directory where the joystick control script is located and run the file:<br/>
+```joystick.py ```<br/>
 
-For Ubuntu (Linux) Users:
-<br/>Make sure you have the Evdev library installed on your system. Then, run the joystick control script by executing the following command:<br/>
-```python joy_ubuntu.py```<br/>
+### For Ubuntu (Linux) Users:
+<br/>Make sure you have the Evdev library installed on your system. Then, navigate to the Joystick:windows directory where the joystick control script is located and run the script:<br/>
+```joy_ubuntu.py```<br/>
 
-For MacOS Users:<br/>
-Ensure that you have the Pygame library installed. Then, navigate to the directory where the joystick control script is located and execute the following command:
-<br/>```python joystick.py```<br/>
+### For MacOS Users:<br/>
+Ensure that you have the Pygame library installed. Then, navigate to the directory where the joystick control script is located and run:
+<br/>```joystick.py```<br/>
 
 ![joystick](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/17bdba11-c7b0-4a49-a892-8efce235e57e)
 ![joystick tp](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/79608307-4590-41d0-8d1b-ab737c30b94a)
