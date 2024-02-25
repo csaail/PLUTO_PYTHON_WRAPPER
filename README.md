@@ -64,8 +64,35 @@ To set up joystick controls for your Pluto drone, follow these general steps:
 - Navigate to the Joystick/mac directory.
 - Run the joystick.py script.
 
+Currently the default settings are: (Note: you can change them according to your need)
 ![joystick](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/17bdba11-c7b0-4a49-a892-8efce235e57e)
 ![joystick tp](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/79608307-4590-41d0-8d1b-ab737c30b94a)
+
+## Voice Controlled Drone
+
+We've developed a script that enables you to control your Pluto drone using your voice!
+
+1. **Download Pre-trained Voice Model:**
+   - Visit [Vosk Models](https://alphacephei.com/vosk/models) to download a pre-trained voice model.
+   - Recommended models: `vosk-model-small-en-us-0.15` or `vosk-model-en-in-0.5`.
+
+2. **Configure Voice Command Script:**
+   - Copy the path where you've stored your downloaded model.
+   - Paste the path into the `voice_cmd.py` file located in the "voice" folder.
+
+3. **Run Voice Command Script:**
+   - Navigate to the "voice" folder.
+   - Run the file:
+     ```
+     voice_cmd.py
+     ```
+
+Currently, the drone responds to the following voice commands:
+- "hello" to arm the drone.
+- "take off" to initiate takeoff.
+- "land" to initiate landing.
+
+Feel free to customize these commands according to your preferences.
 
 
 ## Structure of the Wrapper:
