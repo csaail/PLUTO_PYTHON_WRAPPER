@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from src.Pluto import pluto
 
 # Initialize Vosk model for speech recognition
-model = Model(r"C:/Users/creat/Downloads/py_drona/drone_all-main/drone_all-main/vosk-model-small-en-us-0.15")
+model = Model(r"/vosk-model-small-en-us-0.15")
 recognizer = KaldiRecognizer(model, 16000)
 
 # Initialize PyAudio for microphone input
