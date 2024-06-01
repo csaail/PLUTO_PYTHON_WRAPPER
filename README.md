@@ -3,7 +3,7 @@
 Pluto can be operated using Python for various tasks. Python is a versatile programming language known for its simplicity and readability.
 
 ## Basic Flight Controls/ Commands:
-[image](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/86b0fbee-adbe-42af-9f66-f3d1518fe15d)
+![W](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/86b0fbee-adbe-42af-9f66-f3d1518fe15d)
 
 Pitch => Forward/Back.<br/> Roll => Left/right.<br/>  Yaw => Left/right rotation around the centre of the frame.<br/>  Throttle => Changed altitude/speed.
 
