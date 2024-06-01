@@ -3,7 +3,8 @@
 Pluto can be operated using Python for various tasks. Python is a versatile programming language known for its simplicity and readability.
 
 ## Basic Flight Controls/ Commands:
-![image](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/0c2c1fd0-8676-4b9c-ab87-48ce3d7c87af)
+[image](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/86b0fbee-adbe-42af-9f66-f3d1518fe15d)
+
 Pitch => Forward/Back.<br/> Roll => Left/right.<br/>  Yaw => Left/right rotation around the centre of the frame.<br/>  Throttle => Changed altitude/speed.
 
 # plutocontrol
@@ -44,7 +45,6 @@ pluto.disconnect()
 ```
 
 
-
 ## Keyboard Controls:
 
 To set up keyboard controls for your Pluto drone, follow these general steps:
@@ -67,7 +67,7 @@ To set up keyboard controls for your Pluto drone, follow these general steps:
 - Navigate to the Keyboard/linux_mac directory.
 - Run the ```keyboard.py``` script.
 
-![W](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/2ed955e3-dea1-4dfe-adc3-5ba69d3fdc1d)
+![W](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/88f4e13c-2aed-4037-a63b-0d4a57ca5677)
 
 ## Joystick Controls Setup:
 
@@ -103,8 +103,9 @@ To set up joystick controls for your Pluto drone, follow these general steps:
 - Run the joystick.py script.
 
 Currently the default settings are: (Note: you can change them according to your need)
-![joystick](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/17bdba11-c7b0-4a49-a892-8efce235e57e)
-![joystick tp](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/79608307-4590-41d0-8d1b-ab737c30b94a)
+
+![joystick (1)](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/1c021e29-8390-4133-96a4-02808f522b44)
+![joystick tp (1)](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/336ae10a-6ea9-4ad1-9b3b-7bb3cc0e3999)
 
 ## Voice Controlled Drone
 
@@ -124,7 +125,7 @@ We've developed a script that enables you to control your Pluto drone using your
      `
      voice_cmd.py
      `
-
+     
 Currently, the drone responds to the following voice commands:
 - "hello" to arm the drone.
 - "take off" to initiate takeoff.
@@ -132,6 +133,5 @@ Currently, the drone responds to the following voice commands:
 
 Feel free to customize these commands according to your preferences.
 
+![Arm](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/3585846f-4a2e-46fa-8bfb-704ad2a6c131)
 
-## Structure of the Wrapper:
-![image](https://github.com/csaail/PLUTO_PYTHON_WRAPPER/assets/87662482/927591e8-36cd-4f2d-ae88-0016fa9479c9)
