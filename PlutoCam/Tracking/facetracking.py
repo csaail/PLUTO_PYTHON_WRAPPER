@@ -12,7 +12,7 @@ frame_size = frame_width * frame_height * 3
 
 # Start streaming from the drone
 process = subprocess.Popen(
-    ["pylwdrone", "stream", "start", "--out-file", "-"],
+    ["plutocam", "stream", "start", "--out-file", "-"],
     stdout=subprocess.PIPE
 )
 
