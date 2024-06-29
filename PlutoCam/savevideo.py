@@ -1,5 +1,5 @@
-import pylwdrone
-drone = pylwdrone.LWDrone()
+import plutocam
+drone = plutocam.LWDrone()
 
 
 drone.set_time()
